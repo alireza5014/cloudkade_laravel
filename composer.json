@@ -1,5 +1,5 @@
 {
-  "name": "idegostaran/cloudkade",
+  "name": "cloudkade/cloudkade_laravel",
   "description": "Package for Cloudkade Services",
   "type": "library",
   "license": "MIT",
@@ -15,5 +15,6 @@
     "psr-4": {
       "idegostaran\\cloudkade\\": "src/"
     }
-  }
+  },
+    "prefer-stable": true
 }
