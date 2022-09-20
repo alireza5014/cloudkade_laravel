@@ -6,16 +6,11 @@ use idegostaran\cloudkade\Adapter\Adapter;
 use idegostaran\cloudkade\Cloudkade;
 use idegostaran\cloudkade\Services\API;
 
-class Vod
+class Vod extends Cloudkade
 {
 
 
-    protected $http;
 
-    public function __construct($http)
-    {
-        $this->http=$http;
-    }
 
     public function channels()
     {
