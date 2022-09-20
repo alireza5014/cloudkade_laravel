@@ -13,5 +13,5 @@ interface API
      * @param Adapter $http
      * @param array $config
      */
-    public function __construct(Adapter $http, array $config);
+    public function __construct(Adapter $http);
 }
