@@ -1,5 +1,5 @@
 <?php
-namespace  idegostaran\cloudkade\Service;
+namespace  idegostaran\cloudkade\Services;
 
 class Live
 {
