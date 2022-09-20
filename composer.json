@@ -1,0 +1,19 @@
+{
+  "name": "idegostaran/cloudkade",
+  "description": "Package for Cloudkade Services",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sandip Patel",
+      "email": "demo@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "PCB\\TimeZones\\": "cloudkade/src/"
+    }
+  }
+}
