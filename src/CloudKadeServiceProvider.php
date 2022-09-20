@@ -1,6 +1,7 @@
 <?php
 
 namespace idegostaran\cloudkade;
+
 use Illuminate\Support\ServiceProvider;
 
 class CloudKadeServiceProvider extends ServiceProvider
@@ -12,7 +13,10 @@ class CloudKadeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__ . '/../config/config.php' => config_path('cloudkade.php'),
+        ], 'config');
+
     }
 
     /**
@@ -22,7 +26,11 @@ class CloudKadeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        include __DIR__ . '/routes.php';
+
+        $this->app->singleton(Cloudkade::class, function () {
+            return new Cloudkade();
+        });
+//        include __DIR__ . '/routes.php';
     }
 
 }
