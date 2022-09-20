@@ -9,7 +9,7 @@ class Channel
 
     protected $http;
 
-    public function __construct(Adapter $http)
+    public function __construct($http)
     {
         $this->http = $http;
     }
