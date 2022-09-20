@@ -3,12 +3,15 @@
 namespace idegostaran\cloudkade;
 
 
+use idegostaran\cloudkade\Services\Live\Live;
+use idegostaran\cloudkade\Services\Vod\Vod;
 
-use idegostaran\cloudkade\Services\Live;
-use idegostaran\cloudkade\Services\Vod;
-
-class Cloudkade extends CurlRequest
+class Cloudkade
 {
+
+
+
+
     public static function vod()
     {
         return new Vod();
@@ -17,35 +20,6 @@ class Cloudkade extends CurlRequest
     public static function live()
     {
         return new Live();
-    }
-
-    public function create()
-    {
-        $this->post();
-    }
-
-    public function update()
-    {
-        $this->patch();
-
-    }
-
-    public function delete()
-    {
-        $this->delete();
-
-    }
-
-    public function get()
-    {
-    return   1;
-
-    }
-
-    public function single()
-    {
-        $this->get();
-
     }
 
 

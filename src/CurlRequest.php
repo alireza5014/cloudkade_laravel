@@ -2,7 +2,9 @@
 
 namespace idegostaran\cloudkade;
 
-class CurlRequest
+use idegostaran\cloudkade\Adapter\Adapter;
+
+class CurlRequest  implements Adapter
 {
     public function get()
     {
