@@ -38,7 +38,7 @@ class Cloudkade extends CurlRequest
 
     public function get()
     {
-        $this->get();
+    return   1;
 
     }
 
