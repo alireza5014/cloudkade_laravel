@@ -1,20 +1,29 @@
 {
-  "name": "cloudkade/cloudkade_laravel",
-  "description": "Package for Cloudkade Services",
-  "type": "library",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Alireza Heidari",
-      "email": "persian402@gmail.com"
+    "name": "cloudkade/cloudkade_laravel",
+    "description": "Package for Cloudkade Services",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alireza Heidari",
+            "email": "persian402@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "idegostaran\\cloudkade\\": "src/"
+        }
+    },
+    "prefer-stable": true,
+    "config": {
+        "platform": {
+            "php": "7.2.0"
+        },
+        "disable-tls": false
+    },
+    "repositories": {
+        "packagist": false
     }
-  ],
-  "minimum-stability": "dev",
-  "require": {},
-  "autoload": {
-    "psr-4": {
-      "idegostaran\\cloudkade\\": "src/"
-    }
-  },
-    "prefer-stable": true
 }
