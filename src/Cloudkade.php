@@ -2,8 +2,10 @@
 
 namespace idegostaran\cloudkade;
 
-use Live;
-use Vod;
+
+
+use idegostaran\cloudkade\Service\Live;
+use idegostaran\cloudkade\Service\Vod;
 
 class Cloudkade extends CurlRequest
 {
