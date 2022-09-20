@@ -11,10 +11,9 @@ class Vod extends Cloudkade
 
 
 
-
     public function channels()
     {
-        return new Channel($this->http);
+        return new Channel(parent::$http);
     }
 
 

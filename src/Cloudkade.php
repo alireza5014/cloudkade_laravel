@@ -11,22 +11,22 @@ use idegostaran\cloudkade\Services\Vod\Vod;
 class Cloudkade implements API
 {
 
-    public $http;
+    public static $http;
 
     public function __construct(Adapter $http)
     {
-        $this->http = $http;
+        static::$http = $http;
     }
 
 
     public static function vod()
     {
-        return new Vod();
+        return new Vod(static::$http);
     }
 
     public static function live()
     {
-        return new Live();
+        return new Live(static::$http);
     }
 
 
