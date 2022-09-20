@@ -1,5 +1,7 @@
 <?php
 
+namespace idegostaran\cloudkade;
+use Illuminate\Support\ServiceProvider;
 
 class CloudKadeServiceProvider extends ServiceProvider
 {
