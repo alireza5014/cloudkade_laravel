@@ -2,7 +2,7 @@
 
 namespace IdeGostaran\Cloudkade\Services\Vod;
 
-use IdeGostaran\Cloudkade\Cloudkade;
+use IdeGostaran\Cloudkade;
 
 class Vod extends Cloudkade
 {
