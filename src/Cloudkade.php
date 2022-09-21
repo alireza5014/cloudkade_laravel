@@ -15,6 +15,7 @@ class Cloudkade
     public function __construct()
     {
         self::$http = new HttpRequest();
+
     }
 
     public static function vod($method = null)
