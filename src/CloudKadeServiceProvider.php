@@ -13,9 +13,9 @@ class CloudKadeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/../config/cloudkade.php' => config_path('cloudkade.php'),
-        ], 'config');
+//        $this->publishes([
+//            __DIR__ . '/../config/cloudkade.php' => config_path('cloudkade.php'),
+//        ], 'config');
 
     }
     protected function loadConfig(): array
