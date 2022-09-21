@@ -2,20 +2,25 @@
 
 namespace idegostaran\cloudkade\Services\Live;
 
-class Record
+class Record extends Live
 {
-    public function start()
+    private $data = [];
+
+    public function start($stream_id)
     {
+        return parent::$http->delete("/live/streams/" . $stream_id . "/record/start", $this->data);
 
     }
 
-    public function stop()
+    public function end($stream_id)
     {
+        return parent::$http->delete("/live/streams/" . $stream_id . "/record/end", $this->data);
 
     }
 
-    public function pause()
+    public function pause($stream_id)
     {
+        return parent::$http->delete("/live/streams/" . $stream_id . "/record/stop", $this->data);
 
     }
 }

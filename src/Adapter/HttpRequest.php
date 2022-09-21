@@ -11,7 +11,7 @@ class HttpRequest
      *
      * @var string
      */
-    protected $base_url = 'https://service.cloudkade.com/api/v1/vod';
+    protected $base_url = 'https://service.cloudkade.com/api/v1';
     protected $apikey = '';
     protected $headers = [];
 

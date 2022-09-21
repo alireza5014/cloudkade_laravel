@@ -17,14 +17,25 @@ class Cloudkade
         self::$http = new HttpRequest();
     }
 
-    public static function vod()
+    public static function vod($method = null)
     {
-        return new Vod();
+        $class = new Vod();
+        if ($method) {
+            return $class->$method();
+        }
+
+        return $class;
     }
 
-    public static function live()
+    public static function live($method = null)
     {
-        return new Live();
+
+        $class = new Live();
+        if ($method) {
+            return $class->$method();
+        }
+
+        return $class;
     }
 
 
