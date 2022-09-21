@@ -48,6 +48,8 @@ class HttpRequest
      */
     public function get(string $url, array $data = [], array $headers = [])
     {
+
+        return $url;
         return $this->request('GET', $url, ['query' => $data], $headers);
     }
 
