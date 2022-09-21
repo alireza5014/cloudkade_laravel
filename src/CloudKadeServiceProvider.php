@@ -13,6 +13,9 @@ class CloudKadeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->publishes([
+            __DIR__ . '/../config/cloudkade.php' => config_path('cloudkade.php'),
+        ], 'config');
 
     }
 
@@ -23,9 +26,6 @@ class CloudKadeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->publishes([
-            __DIR__ . '/../config/cloudkade.php' => config_path('cloudkade.php'),
-        ], 'config');
 
         $this->app->singleton(Cloudkade::class, function () {
             return new Cloudkade();
