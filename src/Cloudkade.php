@@ -17,12 +17,12 @@ class Cloudkade
         self::$http = new HttpRequest();
     }
 
-    private static function vod()
+    public static function vod()
     {
         return new Vod();
     }
 
-    private static function live()
+    public static function live()
     {
         return new Live();
     }
