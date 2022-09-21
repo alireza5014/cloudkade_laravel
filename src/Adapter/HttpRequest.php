@@ -19,7 +19,7 @@ class HttpRequest
      *
      * @var string
      */
-    protected $base_url;
+    protected $base_url='https://service.cloudkade.com';
 
     /**
      * Http constructor.
