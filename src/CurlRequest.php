@@ -1,8 +1,8 @@
 <?php
 
-namespace idegostaran\cloudkade;
+namespace IdeGostaran\Cloudkade;
 
-use idegostaran\cloudkade\Adapter\Adapter;
+use IdeGostaran\Cloudkade\Adapter\Adapter;
 
 class CurlRequest  implements Adapter
 {

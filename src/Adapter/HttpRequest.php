@@ -1,6 +1,6 @@
 <?php
 
-namespace idegostaran\cloudkade\Adapter;
+namespace IdeGostaran\Cloudkade\Adapter;
 
 class HttpRequest
 {

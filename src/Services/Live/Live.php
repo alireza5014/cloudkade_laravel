@@ -1,9 +1,9 @@
 <?php
 
-namespace idegostaran\cloudkade\Services\Live;
+namespace IdeGostaran\Cloudkade\Services\Live;
 
 
-use idegostaran\cloudkade\Cloudkade;
+use IdeGostaran\Cloudkade\Cloudkade;
 
 class Live extends Cloudkade
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace idegostaran\cloudkade;
+namespace IdeGostaran\Cloudkade;
 
 use Illuminate\Support\ServiceProvider;
 

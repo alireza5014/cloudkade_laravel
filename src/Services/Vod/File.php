@@ -1,6 +1,6 @@
 <?php
 
-namespace idegostaran\cloudkade\Services\Vod;
+namespace IdeGostaran\Cloudkade\Services\Vod;
 
 class File extends  Vod
 {

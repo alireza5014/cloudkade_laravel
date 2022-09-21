@@ -1,11 +1,11 @@
 <?php
 
-namespace idegostaran\cloudkade;
+namespace IdeGostaran\Cloudkade;
 
 
-use idegostaran\cloudkade\Adapter\HttpRequest;
-use idegostaran\cloudkade\Services\Live\Live;
-use idegostaran\cloudkade\Services\Vod\Vod;
+use IdeGostaran\Cloudkade\Adapter\HttpRequest;
+use IdeGostaran\Cloudkade\Services\Live\Live;
+use IdeGostaran\Cloudkade\Services\Vod\Vod;
 
 class Cloudkade
 {

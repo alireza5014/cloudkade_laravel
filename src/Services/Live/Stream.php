@@ -1,6 +1,6 @@
 <?php
 
-namespace idegostaran\cloudkade\Services\Live;
+namespace IdeGostaran\Cloudkade\Services\Live;
 
 class Stream extends Live
 {

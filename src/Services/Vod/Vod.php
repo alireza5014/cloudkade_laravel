@@ -1,8 +1,8 @@
 <?php
 
-namespace idegostaran\cloudkade\Services\Vod;
+namespace IdeGostaran\Cloudkade\Services\Vod;
 
-use idegostaran\cloudkade\Cloudkade;
+use IdeGostaran\Cloudkade\Cloudkade;
 
 class Vod extends Cloudkade
 {
