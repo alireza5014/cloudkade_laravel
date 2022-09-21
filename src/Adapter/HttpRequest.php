@@ -2,9 +2,6 @@
 
 namespace idegostaran\cloudkade\Adapter;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
-
 class HttpRequest
 {
 
