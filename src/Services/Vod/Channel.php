@@ -15,13 +15,19 @@ class Channel extends Vod
         return $this;
     }
 
+    public function setDescription($description)
+    {
+        $this->data['description'] = $description;
+        return $this;
+    }
+
     public function all()
     {
         return parent::$http->get("/channels");
     }
 
     public function create($data = [])
-     {
+    {
         $this->data = array_merge($data, $this->data);
         return parent::$http->post("/channels", $this->data);
     }
