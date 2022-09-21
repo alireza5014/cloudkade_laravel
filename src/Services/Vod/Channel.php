@@ -2,13 +2,27 @@
 
 namespace idegostaran\cloudkade\Services\Vod;
 
+
 class Channel extends Vod
 {
 
+    private $data = [];
+
+
+    public function setTitle($title)
+    {
+        $this->data['title'] = $title;
+        return $this;
+    }
 
     public function all()
     {
-        $url = "/channels";
-        return parent::$http->get($url);
+        return parent::$http->get("/channels");
+    }
+
+    public function create($data = [])
+    {
+        $this->data = array_merge($data, $this->data);
+        return parent::$http->post("/channels", $this->data);
     }
 }
