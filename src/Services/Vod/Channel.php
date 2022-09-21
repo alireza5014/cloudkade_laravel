@@ -21,7 +21,7 @@ class Channel extends Vod
     }
 
     public function create($data = [])
-    {
+     {
         $this->data = array_merge($data, $this->data);
         return parent::$http->post("/channels", $this->data);
     }
