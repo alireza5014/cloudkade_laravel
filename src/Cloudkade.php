@@ -3,30 +3,28 @@
 namespace idegostaran\cloudkade;
 
 
-use idegostaran\cloudkade\Adapter\Adapter;
-use idegostaran\cloudkade\Services\API;
+use idegostaran\cloudkade\Adapter\HttpRequest;
 use idegostaran\cloudkade\Services\Live\Live;
 use idegostaran\cloudkade\Services\Vod\Vod;
 
-class Cloudkade implements API
+class Cloudkade
 {
 
-    public static $http;
+    protected static $http;
 
-    public function __construct(Adapter $http)
+    public function __construct()
     {
-        static::$http = $http;
+        self::$http = new HttpRequest();
     }
 
-
-    public static function vod()
+    private static function vod()
     {
-        return new Vod(static::$http);
+        return new Vod();
     }
 
-    public static function live()
+    private static function live()
     {
-        return new Live(static::$http);
+        return new Live();
     }
 
 

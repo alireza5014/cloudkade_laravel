@@ -1,11 +1,11 @@
 <?php
 
-namespace  idegostaran\cloudkade\Adapter;
+namespace idegostaran\cloudkade\Adapter;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
-class HttpRequest implements Adapter
+class HttpRequest
 {
     /**
      * guzzle http client.
@@ -19,23 +19,20 @@ class HttpRequest implements Adapter
      *
      * @var string
      */
-    protected $service;
+    protected $base_url;
 
     /**
      * Http constructor.
      *
-     * @param Auth   $auth
      * @param string $baseUrl
-     * @param string $service
      */
-    public function __construct(Auth $auth, string $baseUrl, string $service)
+    public function __construct(string $baseUrl='')
     {
-        $this->service = $service;
-        $headers = $auth->getHeaders();
+        $headers = '';
         $this->client = new Client([
-            'base_uri'       => $baseUrl,
-            'headers'        => $headers,
-            'allow_redirects'=> false,
+            'base_uri' => $baseUrl??$this->base_url,
+            'headers' => $headers,
+            'allow_redirects' => false,
         ]);
     }
 
@@ -44,107 +41,46 @@ class HttpRequest implements Adapter
      * Sends a GET request.
      *
      * @param string $url
-     * @param array  $data
-     * @param array  $headers
+     * @param array $data
+     * @param array $headers
      *
-     * @throws ResponseException
-     * @throws \GuzzleHttp\Exception\GuzzleException
      *
-     * @return Response
      */
-    public function get(string $url, array $data = [], array $headers = []): Response
+    public function get(string $url, array $data = [], array $headers = [])
     {
-        return $this->request('GET', $url, ['query'=>$data], $headers);
+        return $this->request('GET', $url, ['query' => $data], $headers);
     }
 
-    /**
-     * Sends a Post request.
-     *
-     * @param string $url
-     * @param array  $data
-     * @param array  $headers
-     *
-     * @throws ResponseException
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return Response
-     */
-    public function post(string $url, array $data = [], array $headers = []): Response
+
+    public function post(string $url, array $data = [], array $headers = [])
     {
-        return $this->request('POST', $url, ['json'=>$data], $headers);
+        return $this->request('POST', $url, ['json' => $data], $headers);
     }
 
-    /**
-     * Sends a Put request.
-     *
-     * @param string $url
-     * @param array  $data
-     * @param array  $headers
-     *
-     * @throws ResponseException
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return Response
-     */
-    public function put(string $url, array $data = [], array $headers = []): Response
+
+    public function put(string $url, array $data = [], array $headers = [])
     {
-        return $this->request('PUT', $url, ['json'=>$data], $headers);
+        return $this->request('PUT', $url, ['json' => $data], $headers);
     }
 
-    /**
-     * Sends a Patch request.
-     *
-     * @param string $url
-     * @param array  $data
-     * @param array  $headers
-     *
-     * @throws ResponseException
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return Response
-     */
-    public function patch(string $url, array $data = [], array $headers = []): Response
+
+    public function patch(string $url, array $data = [], array $headers = [])
     {
-        return $this->request('PATCH', $url, ['json'=>$data], $headers);
+        return $this->request('PATCH', $url, ['json' => $data], $headers);
     }
 
-    /**
-     * Sends a Delete request.
-     *
-     * @param string $url
-     * @param array  $data
-     * @param array  $headers
-     *
-     * @throws ResponseException
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return Response
-     */
-    public function delete(string $url, array $data = [], array $headers = []): Response
+
+    public function delete(string $url, array $data = [], array $headers = [])
     {
-        return $this->request('DELETE', $url, ['json'=>$data], $headers);
+        return $this->request('DELETE', $url, ['json' => $data], $headers);
     }
 
-    /**
-     * Sends a request.
-     *
-     * @param string $method
-     * @param string $url
-     * @param array  $data
-     * @param array  $headers
-     *
-     * @throws ResponseException
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     *
-     * @return Response
-     */
-    public function request(string $method, string $url, array $data = [], array $headers = []): Response
+    public function request(string $method, string $url, array $data = [], array $headers = [])
     {
         try {
             $data['headers'] = $headers;
             $response = $this->client->request($method, $url, $data);
         } catch (RequestException $e) {
-            throw ResponseException::fromRequestException($e);
         }
 
         $responseData = json_decode($response->getBody()->getContents(), true);
@@ -154,17 +90,10 @@ class HttpRequest implements Adapter
             : $responseData, $responseData['message'] ?? null);
     }
 
-    /**
-     * Return Response.
-     *
-     * @param array  $data
-     * @param string $message
-     *
-     * @return Response
-     */
-    protected function response(array $data, string $message = null): Response
+
+    protected function response(array $data, string $message = null)
     {
- 
+
         return $data;
     }
 }

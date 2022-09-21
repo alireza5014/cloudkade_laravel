@@ -2,21 +2,13 @@
 
 namespace idegostaran\cloudkade\Services\Vod;
 
-use idegostaran\cloudkade\Adapter\Adapter;
-
-class Channel
+class Channel extends Vod
 {
 
-    protected $http;
-
-    public function __construct($http)
-    {
-        $this->http = $http;
-    }
 
     public function all()
     {
         $url = "/channels";
-        $this->http->get($url);
+        return parent::$http->get($url);
     }
 }
