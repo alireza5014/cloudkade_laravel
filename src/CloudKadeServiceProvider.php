@@ -30,7 +30,9 @@ class CloudKadeServiceProvider extends ServiceProvider
         $this->app->singleton(Cloudkade::class, function () {
             return new Cloudkade();
         });
-//        include __DIR__ . '/routes.php';
+//        include __DIR__ . '/routes.php ';
     }
+
+
 
 }
